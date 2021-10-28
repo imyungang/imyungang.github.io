@@ -13,46 +13,46 @@
 			<div class="wrapper">
 				<div class="coming-block">
 					<h1>距离出狱还有</h1>
-					<div>
-						<div>
+					<div class="countdown">
+						<div class="countdown__days1">
 							<div>0</div>
 							<span class>天</span>
 						</div>
 
-						<div>
+						<div class="countdown__hours1">
 							<div>0</div>
 							<span class>时</span>
 						</div>
 
-						<div>
+						<div class="countdown__minutes1">
 							<div>0</div>
 							<span class>分</span>
 						</div>
 
-						<div>
+						<div class="countdown__seconds1">
 							<div>0</div>
 							<span class>秒</span>
 						</div>
 					</div>
 					<h1>距离缓刑结束还有</h1>
 					<div class="countdown">
-						<div class="countdown__days">
-							<div class="number"></div>
+						<div class="countdown__days2">
+							<div class="number2"></div>
 							<span class>天</span>
 						</div>
 
-						<div class="countdown__hours">
-							<div class="number"></div>
+						<div class="countdown__hours2">
+							<div class="number2"></div>
 							<span class>时</span>
 						</div>
 
-						<div class="countdown__minutes">
-							<div class="number"></div>
+						<div class="countdown__minutes2">
+							<div class="number2"></div>
 							<span class>分</span>
 						</div>
 
-						<div class="countdown__seconds">
-							<div class="number"></div>
+						<div class="countdown__seconds2">
+							<div class="number2"></div>
 							<span class>秒</span>
 						</div>
 					</div>
@@ -61,11 +61,11 @@
 		</div>
 		<script>
 			(() => {
-				const deadlineDate = new Date('January 13, 2022 00:00:00').getTime();
-				const countdownDays = document.querySelector('.countdown__days .number');
-				const countdownHours = document.querySelector('.countdown__hours .number');
-				const countdownMinutes = document.querySelector('.countdown__minutes .number');
-				const countdownSeconds = document.querySelector('.countdown__seconds .number');
+				const deadlineDate1 = new Date('October 27, 2021 21:05:00').getTime();
+				const countdownDays1 = document.querySelector('.countdown__days1 .number1');
+				const countdownHours1 = document.querySelector('.countdown__hours1 .number1');
+				const countdownMinutes1 = document.querySelector('.countdown__minutes1 .number1');
+				const countdownSeconds1 = document.querySelector('.countdown__seconds1 .number1');
 				setInterval(() => {
 					const currentDate = new Date().getTime();
 					const distance = deadlineDate1 - currentDate;
@@ -73,10 +73,31 @@
 					const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 					const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 					const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-					countdownDays.innerHTML = days;
-					countdownHours.innerHTML = hours;
-					countdownMinutes.innerHTML = minutes;
-					countdownSeconds.innerHTML = seconds;
+					countdownDays1.innerHTML = days;
+					countdownHours1.innerHTML = hours;
+					countdownMinutes1.innerHTML = minutes;
+					countdownSeconds1.innerHTML = seconds;
+				}, 1000);
+			})();
+		</script>
+		<script>
+			(() => {
+				const deadlineDate2 = new Date('January 13, 2022 00:00:00').getTime();
+				const countdownDays2 = document.querySelector('.countdown__days2 .number2');
+				const countdownHours2 = document.querySelector('.countdown__hours2 .number2');
+				const countdownMinutes2 = document.querySelector('.countdown__minutes2 .number2');
+				const countdownSeconds2 = document.querySelector('.countdown__seconds2 .number2');
+				setInterval(() => {
+					const currentDate = new Date().getTime();
+					const distance = deadlineDate2 - currentDate;
+					const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+					const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+					const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+					const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+					countdownDays2.innerHTML = days;
+					countdownHours2.innerHTML = hours;
+					countdownMinutes2.innerHTML = minutes;
+					countdownSeconds2.innerHTML = seconds;
 				}, 1000);
 			})();
 		</script>
